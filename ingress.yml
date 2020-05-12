@@ -1,13 +1,13 @@
-apiVersion: networking.k8s.io/v1beta1
-kind: Ingress
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
 metadata:
   name: petclinic
   namespace: petclinic
 spec:
-  rules:
-    - host: petclinic.mgmt.tkg-aws2-lab.winterfell.live
-      http:
-        paths:
-          - backend:
-              serviceName: petclinic
-              servicePort: 80
+  routes:
+  - match: /
+    services:
+    - name: petclinic
+      port: 80
+  virtualhost:
+    fqdn: petclinic.mgmt.tkg-aws2-lab.winterfell.live
