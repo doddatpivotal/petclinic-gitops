@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: petclinic
+  namespace: petclinic
+spec:
+  rules:
+    - host: petclinic.tkg-aws2-lab.winterfell.live
+      http:
+        paths:
+          - backend:
+              serviceName: petclinic
+              servicePort: 80
