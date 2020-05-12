@@ -1,0 +1,13 @@
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: petclinic
+  namespace: petclinic
+spec:
+  routes:
+  - match: /
+    services:
+    - name: petclinic
+      port: 80
+  virtualhost:
+    fqdn: petclinic.stormsend.tkg-vsphere-lab.winterfell.live

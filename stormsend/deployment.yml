@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: petclinic
+  namespace: petclinic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: petclinic
+  template:
+    metadata:
+      labels:
+        run: petclinic
+    spec:
+      containers:
+        - image: harbor.mgmt.tkg-vsphere-lab.winterfell.live/petclinic/petclinic:latest
+          name: petclinic
