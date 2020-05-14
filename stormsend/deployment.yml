@@ -14,5 +14,5 @@ spec:
         run: petclinic
     spec:
       containers:
-        - image: harbor.mgmt.tkg-vsphere-lab.winterfell.live/petclinic/petclinicb1.20200514.133612
+        - image: harbor.mgmt.tkg-vsphere-lab.winterfell.live/petclinic/petclinic:b1.20200514.133612
           name: petclinic
